@@ -6,6 +6,10 @@ const product = {
   screenType: 'LED',
 }
 
+const {price, refreshRate, screenType} = product;
+
+console.log(product);
+
 // Opdracht 2: Destructure type en brand uit onderstaand object, en log ze daarna in de terminal
 
 const productInformation = {
@@ -17,6 +21,10 @@ const productInformation = {
   screenQuality: 'Ultra HD/4K',
   smartTv: true,
 }
+
+const {type, brand} = productInformation.general;
+console.log(type);
+console.log(brand);
 
 // Opdracht 3: destructure wifi en bluetooth uit onderstaand object, en log ze daarna in de terminal
 
@@ -38,15 +46,27 @@ const tvOptions = {
   },
 };
 
+const {wifi, bluetooth} = tvOptions.options.connectivity.popular;
+
+console.log(wifi);
+console.log(bluetooth);
+
 // Opdracht 4: Destructure beide waardes uit onderstaande array, en log ze daarna in de terminal
 
 const connectivity = ['wifi', 'bluetooth'];
 
+const [connect1, connect2] = connectivity;
 
+console.log(connect1);
+console.log(connect2);
 // Opdracht 5: Destructure de >eerste< en >derde< waarde uit onderstaande array, en log ze daarna in de terminal
 
 const tvSizes = [41, 43, 46, 56, 65];
 
+const [first,, third, ...rest] = tvSizes;
+
+console.log(first);
+console.log(third);
 
 // opdracht 6: Destructure name en adress uit de return value van deze functie en log ze daarna in de terminal
 
@@ -57,8 +77,18 @@ function getCompanyDetails() {
   }
 }
 
+const {name: naam, adress: adres} = getCompanyDetails();
+
+console.log(naam);
+console.log(adres);
+
 // opdracht 7: Destructure beide zinnetjes uit de return value van de getDetails functie en log ze in de terminal. Let op: de functie verwacht argumenten bij het aanroepen!
 
 function getDetails(name, age) {
   return [`Your name is ${name}`, `You are ${age} years old`];
 }
+
+const [str1, str2] = getDetails("piet", 45);
+
+console.log(str1);
+console.log(str2);
